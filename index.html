@@ -7,6 +7,7 @@
 </head>
 <body>
     <button id="myButton">Presiona aquí</button>
+    <p id="parrafo"></p>
 
     <script>
         // Función para detectar si el dispositivo es iOS
@@ -18,13 +19,13 @@
         function isAndroid() {
             return /Android/i.test(navigator.userAgent);
         }
-
+        const parrafillo = document.getElementById("parrafo");
         // Event listener para el botón
         document.getElementById("myButton").addEventListener("click", function() {
             if (isiOS()) {
-                console.log("El usuario abrió la página desde un dispositivo iOS.");
+                parrafillo.innerHTML = "El usuario abrió la página desde un dispositivo iOS.";
             } else if (isAndroid()) {
-                console.log("El usuario abrió la página desde un dispositivo Android.");
+                parrafillo.innerHTML = "El usuario abrió la página desde un dispositivo Android.";
             } else {
                 console.log("No se puede determinar el sistema operativo.");
             }
