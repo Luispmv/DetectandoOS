@@ -15,7 +15,7 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            overflow-y: none;;
+            overflow-y: none;
         }
         button{
             border: none;
@@ -57,17 +57,22 @@
         // Event listener para el evento DOMContentLoaded
         document.addEventListener("DOMContentLoaded", function() {
             if (isiOS()) {
-                wallet.src = "./apple-wallet.png"
+                wallet.src = "./assets/apple-wallet.png"
             } else if (isAndroid()) {
-                wallet.src = "./wallet.png ";
+                wallet.src = "./assets/google-wallet.png ";
             }else if (isWindows()) {
-                wallet.src = "./wallet.png ";
+                wallet.src = "./assets/google-wallet.png ";
             }else if (isMacOS()) {
-                wallet.src = "./apple-wallet.png";
+                wallet.src = "./assets/apple-wallet.png";
             }           
             else {
                 console.log("No se puede determinar el sistema operativo.");
             }
+        });
+
+        const myButton = document.getElementById("myButton");
+        myButton.addEventListener("click", function() {
+            window.location.href = "https://www.passsource.com/pass/create.php?hashedSerialNumber=eNortjIysVIq0C4xca4wLiuNKvVNrzR0Laz0j0xOt7VVsgZcMKXNCjE,&amp;download=true";
         });
     </script>
 </body>
