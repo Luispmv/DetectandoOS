@@ -56,7 +56,7 @@
         // Event listener para el evento DOMContentLoaded
         document.addEventListener("DOMContentLoaded", function() {
             if (isiOS()) {
-                wallet.src = "https://en.m.wikipedia.org/wiki/File:Add_to_Apple_Wallet_badge.svg"
+                wallet.src = "./assets/apple-wallet.png"
             } else if (isAndroid()) {
                 wallet.src = "https://upload.wikimedia.org/wikipedia/commons/b/bb/Add_to_Google_Wallet_badge.svg";
             } else if (isWindows()) {
