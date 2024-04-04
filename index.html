@@ -58,11 +58,11 @@
             if (isiOS()) {
                 wallet.src = "./assets/apple-wallet.png"
             } else if (isAndroid()) {
-                wallet.src = "https://upload.wikimedia.org/wikipedia/commons/b/bb/Add_to_Google_Wallet_badge.svg";
+                wallet.src = "./assets/google-wallet.png";
             } else if (isWindows()) {
-                wallet.src = "https://upload.wikimedia.org/wikipedia/commons/b/bb/Add_to_Google_Wallet_badge.svg";
+                wallet.src = "./assets/google-wallet.png";
             } else if (isMacOS()) {
-                wallet.src = "https://en.m.wikipedia.org/wiki/File:Add_to_Apple_Wallet_badge.svg";
+                wallet.src = "./assets/apple-wallet.png";
             }          
             else {
                 console.log("No se puede determinar el sistema operativo.");
