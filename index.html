@@ -9,6 +9,10 @@
             display: grid;
             place-items: center;
             height: 100vh;
+            background-image: url(./PatronCamiones.svg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         button{
             border: none;
@@ -35,7 +39,7 @@
         // Event listener para el evento DOMContentLoaded
         document.addEventListener("DOMContentLoaded", function() {
             if (isiOS()) {
-                document.getElementById("parrafillo").innerHTML = "El usuario abrió la página desde un dispositivo iOS.";
+                wallet.src = "./apple-wallet.png"
             } else if (isAndroid()) {
                 wallet.src = "./wallet.png ";
             } else {
