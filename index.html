@@ -6,8 +6,9 @@
     <title>Detección de sistema operativo</title>
     <style>
         body{
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             background-image: url(./PatronCamiones.svg);
             background-position: center;
@@ -18,6 +19,11 @@
             border: none;
             background-color: transparent;
             cursor: pointer;
+            width: 200px;
+            height: 60px;
+        }
+        img{
+            object-fit: cover;
         }
     </style>
 </head>
@@ -25,16 +31,24 @@
     <button id="myButton"><img id="wallet" src="" alt=""></button>
     <p id="parrafillo"></p>
     <script>
+        const wallet = document.getElementById("wallet");
         // Función para detectar si el dispositivo es iOS
         function isiOS() {
             return /iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
-        const wallet = document.getElementById("wallet");
-
         // Función para detectar si el dispositivo es Android
         function isAndroid() {
             return /Android/i.test(navigator.userAgent);
         }
+
+        function isWindows() {
+            return /Windows/i.test(navigator.userAgent);
+        }
+
+        function isMacOS() {
+            return /Macintosh|MacIntel|MacPPC|Mac68K/i.test(navigator.userAgent);   
+        }
+
         
         // Event listener para el evento DOMContentLoaded
         document.addEventListener("DOMContentLoaded", function() {
@@ -42,7 +56,12 @@
                 wallet.src = "./apple-wallet.png"
             } else if (isAndroid()) {
                 wallet.src = "./wallet.png ";
-            } else {
+            }else if (isWindows()) {
+                wallet.src = "./wallet.png ";
+            }else if (isMacOS()) {
+                wallet.src = "./apple-wallet.png";
+            }           
+            else {
                 console.log("No se puede determinar el sistema operativo.");
             }
         });
